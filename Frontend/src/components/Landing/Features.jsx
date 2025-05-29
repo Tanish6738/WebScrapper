@@ -10,7 +10,8 @@ const Features = () => {
       ),
       title: "Lightning Fast Scraping",
       description: "Extract data from thousands of pages per minute with our optimized scraping engine.",
-      features: ["Static & Dynamic Content", "Parallel Processing", "Real-time Updates"]
+      features: ["Static & Dynamic Content", "Parallel Processing", "Real-time Updates"],
+      gradient: "from-blue-500 to-cyan-500"
     },
     {
       icon: (
@@ -20,7 +21,8 @@ const Features = () => {
       ),
       title: "AI-Powered Data Cleaning",
       description: "Automatically clean, format, and organize scraped data with intelligent algorithms.",
-      features: ["Smart Text Extraction", "Auto-formatting", "Duplicate Removal"]
+      features: ["Smart Text Extraction", "Auto-formatting", "Duplicate Removal"],
+      gradient: "from-purple-500 to-pink-500"
     },
     {
       icon: (
@@ -30,7 +32,8 @@ const Features = () => {
       ),
       title: "Enterprise Security",
       description: "Bank-grade security with encryption, compliance, and data protection standards.",
-      features: ["End-to-end Encryption", "GDPR Compliant", "SOC 2 Certified"]
+      features: ["End-to-end Encryption", "GDPR Compliant", "SOC 2 Certified"],
+      gradient: "from-green-500 to-emerald-500"
     },
     {
       icon: (
@@ -40,7 +43,8 @@ const Features = () => {
       ),
       title: "Multiple Export Formats",
       description: "Export your data in CSV, JSON, Markdown, or plain text formats instantly.",
-      features: ["CSV Export", "JSON Format", "Markdown Output", "Custom Formats"]
+      features: ["CSV Export", "JSON Format", "Markdown Output", "Custom Formats"],
+      gradient: "from-orange-500 to-red-500"
     },
     {
       icon: (
@@ -51,7 +55,8 @@ const Features = () => {
       ),
       title: "Built-in Text Editor",
       description: "Edit and refine your scraped data with our powerful built-in text editor.",
-      features: ["Syntax Highlighting", "Find & Replace", "Real-time Preview"]
+      features: ["Syntax Highlighting", "Find & Replace", "Real-time Preview"],
+      gradient: "from-indigo-500 to-purple-500"
     },
     {
       icon: (
@@ -61,47 +66,66 @@ const Features = () => {
       ),
       title: "Mobile Responsive",
       description: "Access and manage your scraping projects from any device, anywhere.",
-      features: ["Touch Optimized", "Cross-platform", "Offline Capable"]
+      features: ["Touch Optimized", "Cross-platform", "Offline Capable"],
+      gradient: "from-cyan-500 to-blue-500"
     }
   ]
 
   return (
-    <section id="features" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="features" className="aceternity-bg py-24 relative overflow-hidden">
+      {/* Background Grid Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent transform -skew-y-3"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Powerful Features for Modern Web Scraping
+        <div className="text-center mb-20">
+          <div className="aceternity-badge inline-flex items-center px-6 py-3 rounded-full text-sm font-medium mb-8">
+            <span className="aceternity-pulse-dot w-2 h-2 rounded-full mr-3"></span>
+            <span className="relative z-10">Powerful Features</span>
+          </div>
+          
+          <h2 className="text-4xl lg:text-6xl font-bold mb-6">
+            <span className="aceternity-title">Built for </span>
+            <span className="aceternity-title-accent">Performance</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="aceternity-subtitle text-xl lg:text-2xl max-w-4xl mx-auto">
             Everything you need to extract, clean, and export data from any website. 
-            Built for developers, designed for everyone.
+            Enterprise-grade tools designed for developers and built for everyone.
           </p>
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="bg-gray-50 rounded-xl p-8 hover:bg-blue-50 transition-colors group"
+              className="aceternity-visual-card rounded-2xl p-8 group cursor-default"
             >
-              <div className="text-blue-600 mb-4 group-hover:text-blue-700 transition-colors">
-                {feature.icon}
+              {/* Icon with Gradient Background */}
+              <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${feature.gradient} p-4 mb-6 group-hover:scale-110 transition-all duration-300 relative overflow-hidden`}>
+                <div className="text-white relative z-10">
+                  {feature.icon}
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              
+              <h3 className="text-xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300">
                 {feature.title}
               </h3>
-              <p className="text-gray-600 mb-4">
+              
+              <p className="aceternity-subtitle text-base mb-6 leading-relaxed">
                 {feature.description}
               </p>
-              <ul className="space-y-2">
+              
+              <ul className="space-y-3">
                 {feature.features.map((item, itemIndex) => (
-                  <li key={itemIndex} className="flex items-center text-sm text-gray-600">
-                    <svg className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <li key={itemIndex} className="flex items-center text-sm aceternity-value-prop group/item">
+                    <svg className="aceternity-check-icon w-4 h-4 mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:scale-110" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    {item}
+                    <span className="font-medium">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -109,29 +133,49 @@ const Features = () => {
           ))}
         </div>
 
-        {/* Technical Specifications */}
-        <div className="mt-20 bg-gray-900 rounded-2xl p-8 text-white">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold mb-4">Technical Specifications</h3>
-            <p className="text-gray-300 text-lg">Built for performance, reliability, and scale</p>
+        {/* Enhanced Technical Specifications */}
+        <div className="aceternity-visual-card rounded-3xl p-12 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10"></div>
+          
+          <div className="text-center mb-16 relative z-10">
+            <h3 className="text-3xl lg:text-4xl font-bold mb-6">
+              <span className="aceternity-title">Technical </span>
+              <span className="aceternity-title-accent">Specifications</span>
+            </h3>
+            <p className="aceternity-subtitle text-lg lg:text-xl">Built for performance, reliability, and scale</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-blue-400 mb-2">1000+</div>
-              <div className="text-sm text-gray-300">Pages per minute</div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+            <div className="text-center group cursor-default">
+              <div className="aceternity-stat-number text-4xl lg:text-5xl font-bold mb-3 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent transition-all duration-300 group-hover:scale-110">
+                1000+
+              </div>
+              <div className="aceternity-stat-label font-medium">Pages per minute</div>
+              <div className="w-12 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 mx-auto mt-3 rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-green-400 mb-2">99.5%</div>
-              <div className="text-sm text-gray-300">Extraction accuracy</div>
+            
+            <div className="text-center group cursor-default">
+              <div className="aceternity-stat-number text-4xl lg:text-5xl font-bold mb-3 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent transition-all duration-300 group-hover:scale-110">
+                99.5%
+              </div>
+              <div className="aceternity-stat-label font-medium">Extraction accuracy</div>
+              <div className="w-12 h-1 bg-gradient-to-r from-green-400 to-emerald-400 mx-auto mt-3 rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-purple-400 mb-2">99.9%</div>
-              <div className="text-sm text-gray-300">Uptime guarantee</div>
+            
+            <div className="text-center group cursor-default">
+              <div className="aceternity-stat-number text-4xl lg:text-5xl font-bold mb-3 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent transition-all duration-300 group-hover:scale-110">
+                99.9%
+              </div>
+              <div className="aceternity-stat-label font-medium">Uptime guarantee</div>
+              <div className="w-12 h-1 bg-gradient-to-r from-purple-400 to-pink-400 mx-auto mt-3 rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-yellow-400 mb-2">24/7</div>
-              <div className="text-sm text-gray-300">Support available</div>
+            
+            <div className="text-center group cursor-default">
+              <div className="aceternity-stat-number text-4xl lg:text-5xl font-bold mb-3 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent transition-all duration-300 group-hover:scale-110">
+                24/7
+              </div>
+              <div className="aceternity-stat-label font-medium">Support available</div>
+              <div className="w-12 h-1 bg-gradient-to-r from-yellow-400 to-orange-400 mx-auto mt-3 rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
           </div>
         </div>
